@@ -62,7 +62,7 @@ export default function PortfolioHeader() {
     <header className="sectionHeder fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-7xl px-4">
       <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl shadow-primary/5">
         <div className="flex items-center justify-between px-8 py-4">
-          <nav className="flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {["hero", "about", "projects", "contact"].map((section) => (
               <button
                 key={section}
@@ -70,7 +70,7 @@ export default function PortfolioHeader() {
                 className="relative text-sm font-medium transition-all duration-300 ease-out hover:text-primary hover:scale-105 text-muted-foreground hover:text-foreground"
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
-                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary/30 rounded-full transition-all duration-300 hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary/30 rounded-full transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </nav>

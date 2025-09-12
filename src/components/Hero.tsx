@@ -71,8 +71,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Column - 3D Scene */}
-        <div className="flex justify-center lg:justify-end w-full">
+        {/* Right Column - 3D Scene - Hidden on mobile */}
+        <div className="hidden md:flex justify-center lg:justify-end w-full">
           <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] max-w-full lg:max-w-none">
             <Spline 
               scene="https://prod.spline.design/mOAxof0FMIMe8qrR/scene.splinecode" 

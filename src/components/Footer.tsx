@@ -9,7 +9,7 @@ export default function ContactSection() {
             id="contact"
             className="section min-h-section flex items-center justify-center bg-gradient-to-br from-muted/20 to-primary/ px-6 py-20"
         >
-            <div className="w-full max-w-7xl mx-auto">
+            <div className="w-full max-w-full mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-20 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Connect With Me
                 </h2>
