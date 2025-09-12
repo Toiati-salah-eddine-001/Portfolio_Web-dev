@@ -1,103 +1,180 @@
-import Image from "next/image";
+"use client"
+import About from "@/components/About"
+import Hero from "@/components/Hero"
+import { CardCarousel } from "@/components/ui/card-carousel"
+import CardProjectNew from "@/components/CardProjectNew"
+import CardProjectNew2 from "@/components/CardProjectNew2"
+// import ScrollRevealSection from "@/components/ScrollRevealSection"
+import ContactSectoin from "@/components/ContactSectoin"
 
-export default function Home() {
+import {Contact} from "lucide-react";
+import ScrollRevealSection from "@/components/ScrollRevealSection";
+import ContactSection from "@/components/ContactSectoin";
+import Footer from "@/components/Footer"
+function Home() {
+  const images = [
+    { src: "/images/react n.png", alt: "React 1" },
+    { src: "/images/js n.png", alt: "JavaScript" },
+    { src: "/images/css n.png", alt: "CSS" },
+    { src: "/images/html n.png", alt: "HTML" },
+    { src: "/images/git n.png", alt: "Git" },
+    { src: "/images/mysql n.png", alt: "MySQL" },
+    { src: "/images/node n.png", alt: "Node.js" },
+    { src: "/images/php n.png", alt: "PHP" },
+    { src: "/images/sql n.png", alt: "SQL" },
+    { src: "/images/tail n.png", alt: "Tailwind CSS" },
+    { src: "/images/ts nn.png", alt: "TypeScript" },
+      { src: "/images/lara nn.png", alt: "laravel" },
+      { src: "/images/next nnn.png", alt: "next" }
+  ]
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+<main className="min-h-screen bg-background overflow-x-hidden">
+      <Hero />
+      <About />
+      
+      {/* Skills Carousel Section */}
+      <section
+        style={{ cursor: 'url(/heart.svg) 16 16, pointer' }}
+        id="skills"
+        className="section min-h-[80vh] sm:min-h-screen flex items-center justify-center bg-gradient-to-br from-muted/20 to-primary/5 py-12 sm:py-0 px-4 sm:px-6"
+      >
+        <div className="w-full max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-white">
+            My <span className="text-primary">Skills</span>
+          </h2>
+          <div className="w-full max-w-5xl mx-auto">
+            <CardCarousel
+              images={images}
+              autoplayDelay={2000}
+              showPagination={true}
+              showNavigation={true}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+      
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="section min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-muted/20 to-primary/5 py-12 sm:py-20 px-4 sm:px-6"
+      >
+        <div className="w-full max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-white">
+            My <span className="text-primary">Projects</span>
+          </h2>
+          <div className="w-full max-w-4xl mx-auto">
+            <ScrollRevealSection className="grid grid-cols-1 gap-8 sm:gap-12">
+              <CardProjectNew2 />
+              <CardProjectNew />
+              <CardProjectNew2 />
+            </ScrollRevealSection>
+          </div>
+        </div>
+      </section>
+
+    {/*<section*/}
+    {/*    id="contact"*/}
+    {/*    className="section min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/10"*/}
+    {/*>*/}
+    {/*</section>*/}
+    {/*<ContactSection />*/}
+    {/*<section*/}
+    {/*    id="contact"*/}
+    {/*    className="section min-h-[200px] flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/10 px-6"*/}
+    {/*>*/}
+    {/*    <div className="w-full max-w-full mx-auto"> /!* Changed max-w-4xl to max-w-full for full width *!/*/}
+    {/*        <h2 className="text-4xl font-bold text-center mb-16">Connect With Me</h2>*/}
+    {/*        /!* CUSTOM GRID LAYOUT *!/*/}
+    {/*        <div className="relative w-full aspect-[3/2] border-2 border-gray-800 rounded-lg overflow-hidden shadow-2xl">*/}
+    {/*            /!* LinkedIn - Full Width, Top Row *!/*/}
+    {/*            <a*/}
+    {/*                href="https://www.linkedin.com/"*/}
+    {/*                target="_blank"*/}
+    {/*                rel="noopener noreferrer"*/}
+    {/*                className="absolute top-0 left-0 right-0 h-1/3 flex items-center justify-center transition-all duration-500 group"*/}
+    {/*                style={{ backgroundColor: "#0077b5" }}*/}
+    {/*            >*/}
+    {/*                <img*/}
+    {/*                    src="/Icons8/icons8-linkedin-50.png"*/}
+    {/*                    alt="LinkedIn"*/}
+    {/*                    className="w-12 h-12 z-10 transition-all duration-500"*/}
+    {/*                />*/}
+    {/*                /!* Smooth Gradient Overlay on Hover, does not hide icon *!/*/}
+    {/*                <span className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-500 bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-500 z-0"></span>*/}
+    {/*            </a>*/}
+    {/*            /!* GitHub - Half Width, Middle Left *!/*/}
+    {/*            <a*/}
+    {/*                href="https://github.com/"*/}
+    {/*                target="_blank"*/}
+    {/*                rel="noopener noreferrer"*/}
+    {/*                className="absolute top-1/3 left-0 w-1/2 h-1/3 flex items-center justify-center transition-all duration-500 group"*/}
+    {/*                style={{ backgroundColor: "#000000" }}*/}
+    {/*            >*/}
+    {/*                <img*/}
+    {/*                    src="/Icons8/icons8-octocat-50.png"*/}
+    {/*                    alt="GitHub"*/}
+    {/*                    className="w-12 h-12 z-10 transition-all duration-500"*/}
+    {/*                />*/}
+    {/*                <span className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-500 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-400 z-0"></span>*/}
+    {/*            </a>*/}
+    {/*            /!* Instagram - Half Width, Middle Right *!/*/}
+    {/*            <a*/}
+    {/*                href="https://instagram.com/"*/}
+    {/*                target="_blank"*/}
+    {/*                rel="noopener noreferrer"*/}
+    {/*                className="absolute top-1/3 right-0 w-1/2 h-1/3 flex items-center justify-center transition-all duration-500 group"*/}
+    {/*                style={{ backgroundColor: "#f04e39" }}*/}
+    {/*            >*/}
+    {/*                <img*/}
+    {/*                    src="/Icons8/icons8-instagram-50.png"*/}
+    {/*                    alt="Instagram"*/}
+    {/*                    className="w-12 h-12 z-10 transition-all duration-500"*/}
+    {/*                />*/}
+    {/*                <span className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-500 bg-gradient-to-r from-pink-600 via-red-500 to-orange-400 z-0"></span>*/}
+    {/*            </a>*/}
+    {/*            /!* Twitter (X) - One-Third Width, Bottom Left *!/*/}
+    {/*            <a*/}
+    {/*                href="https://twitter.com/"*/}
+    {/*                target="_blank"*/}
+    {/*                rel="noopener noreferrer"*/}
+    {/*                className="absolute bottom-0 left-0 w-1/3 h-1/3 flex items-center justify-center transition-all duration-500 group"*/}
+    {/*                style={{ backgroundColor: "#1da1f2" }}*/}
+    {/*            >*/}
+    {/*                <img*/}
+    {/*                    src="/Icons8/icons8-x-50.png"*/}
+    {/*                    alt="Twitter/X"*/}
+    {/*                    className="w-12 h-12 z-10 transition-all duration-500"*/}
+    {/*                />*/}
+    {/*                <span className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-500 bg-gradient-to-r from-black via-blue-900 to-blue-400 z-0"></span>*/}
+    {/*            </a>*/}
+    {/*            /!* Reddit - Two-Thirds Width, Bottom Right *!/*/}
+    {/*            <a*/}
+    {/*                href="https://reddit.com/"*/}
+    {/*                target="_blank"*/}
+    {/*                rel="noopener noreferrer"*/}
+    {/*                className="absolute bottom-0 right-0 w-2/3 h-1/3 flex items-center justify-center transition-all duration-500 group"*/}
+    {/*                style={{ backgroundColor: "#ff4500" }}*/}
+    {/*            >*/}
+    {/*                <img*/}
+    {/*                    src="/Icons8/icons8-reddit-50.png"*/}
+    {/*                    alt="Reddit"*/}
+    {/*                    className="w-12 h-12 z-10 transition-all duration-500"*/}
+    {/*                />*/}
+    {/*                <span className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-80 transition-opacity duration-500 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 z-0"></span>*/}
+    {/*            </a>*/}
+    {/*        </div>*/}
+    {/*    </div>*/}
+    {/*</section>*/}
+
+
+    <Footer/>
+
+
+
+
+
+</main>
+  )
 }
+
+export default Home
