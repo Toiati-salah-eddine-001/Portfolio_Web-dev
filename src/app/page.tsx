@@ -11,6 +11,8 @@ import {Contact} from "lucide-react";
 import ScrollRevealSection from "@/components/ScrollRevealSection";
 import ContactSection from "@/components/ContactSectoin";
 import Footer from "@/components/Footer"
+import { SectionTitle } from "@/components/ui/SectionTitle";
+
 function Home() {
   const images = [
     { src: "/images/react n.png", alt: "React 1" },
@@ -59,9 +61,9 @@ function Home() {
         className="section min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-muted/20 to-primary/5 py-12 sm:py-20 px-4 sm:px-6"
       >
         <div className="w-full max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-white">
+          <SectionTitle className="mb-8 sm:mb-12">
             My <span className="text-primary">Projects</span>
-          </h2>
+          </SectionTitle>
           <div className="w-full max-w-4xl mx-auto">
             <ScrollRevealSection className="grid grid-cols-1 gap-8 sm:gap-12">
               <CardProjectNew2 />
