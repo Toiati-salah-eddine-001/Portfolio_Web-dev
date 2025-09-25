@@ -45,7 +45,7 @@ export default function ContactSection() {
 
                     {/* LinkedIn - Full Width, Top Row */}
                     <PortalLink
-                        href="https://www.linkedin.com/"
+                        href="https://www.linkedin.com/in/salah-eddine-toiati"
                         bgColor="#0077b5"
                         gradient="from-blue-900 via-cyan-600 to-blue-400"
                         icon="/Icons9/icons8-linkedin-50.png"
@@ -58,7 +58,7 @@ export default function ContactSection() {
 
                     {/* GitHub - Half Width, Middle Left */}
                     <PortalLink
-                        href="https://github.com/"
+                        href="https://github.com/Toiati-salah-eddine-001"
                         bgColor="#000000"
                         gradient="from-gray-900 via-gray-700 to-cyan-900"
                         icon="/Icons9/icons8-github-50.png"

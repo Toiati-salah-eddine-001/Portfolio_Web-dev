@@ -50,7 +50,7 @@ export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:an
         >
             <motion.div
                 ref={cardRef}
-                style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                // style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                 className="bg-gradient-to-br from-red-600 via-red-500 to-red-800 rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch p-1 overflow-hidden relative group"
@@ -95,7 +95,7 @@ export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:an
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
                         >
-                            {["React", "Tailwind", "Framer Motion", "Node.js", "MongoDB"].map((tag, i) => (
+                            {Tags.map((tag, i) => (
                                 <motion.span
                                     key={tag}
                                     className="bg-white/20 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-medium border border-white/30"
@@ -167,12 +167,12 @@ export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:an
                                 className="object-cover"
                                 priority
                             /> */}
-                            <img src={Image} alt="ll" />
+                            <img src={Image} alt="ll" className="object-cover object-fill w-full h-full" />
                         {/* PLACEHOLDER IMAGE — REPLACE WITH YOUR OWN */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent z-10"></div>
-                        <div className="absolute bottom-4 left-4 text-white font-medium z-10">
+                        {/* <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent z-10"></div> */}
+                        {/* <div className="absolute bottom-4 left-4 text-white font-medium z-10">
                             Interactive Preview
-                        </div>
+                        </div> */}
                         {/* FAKE SCREEN UI LINES */}
                         <div className="absolute inset-4 flex flex-col gap-2 z-10">
                             <div className="w-3/4 h-4 bg-white/30 rounded"></div>
