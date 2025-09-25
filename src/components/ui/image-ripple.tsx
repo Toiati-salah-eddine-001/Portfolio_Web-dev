@@ -5,7 +5,7 @@ import { OrthographicCamera, useFBO, useTexture } from "@react-three/drei"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from "three"
 
-export function ImageRipple() {
+export default function ImageRipple() {
   const device = useDimension()
 
   if (!device.width || !device.height) {
