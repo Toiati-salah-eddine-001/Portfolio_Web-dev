@@ -5,7 +5,7 @@ import { OrthographicCamera, useFBO, useTexture } from "@react-three/drei"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import * as THREE from "three"
 
-export default function Scene() {
+export function ImageRipple() {
   const device = useDimension()
 
   if (!device.width || !device.height) {
@@ -198,7 +198,7 @@ function Model() {
 function useMouse() {
   const [mouse, setMouse] = React.useState({ x: 0, y: 0, pixelRatio: 0 })
 
-  const mouseMove = (e: { clientX: any; clientY: any }) => {
+  const mouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e
     setMouse({
       x: clientX,

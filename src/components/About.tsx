@@ -1,19 +1,10 @@
-// import Scene from "./ui/image-ripple";
-import { ImageRippleDemo } from "./ImageDynamic";
-import Image from "next/image";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Image from 'next/image';
 import TextGenerateEffect from "./ui/typewriter";
-import { CardCarousel } from "@/components/ui/card-carousel"
-
 
 export default function About() {
-    const images = [
-    { src: "/card/1.png", alt: "Image 1" },
-    { src: "/card/2.png", alt: "Image 2" },
-    { src: "/card/3.png", alt: "Image 3" },
-  ]
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -56,7 +47,7 @@ export default function About() {
                   data-aos-delay="400" 
                   className="text-base sm:text-lg text-gray-600 dark:text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
                 >
-                  Hi, I'm{' '}
+                  Hi, I&#39;m{' '}
                   <span 
                     className="font-semibold text-primary"
                     data-aos="fade-down-right" 
@@ -64,7 +55,7 @@ export default function About() {
                   >
                     Toiati Salah Eddine
                   </span>
-                  , a web developer with a diploma as a Technicien Spécialisé in Full Stack Web Development. I'm passionate about coding, creativity, and artificial intelligence. I love building modern, interactive web experiences that blend technology and imagination.
+                  , a web developer with a diploma as a Technicien Spécialisé in Full Stack Web Development. {`I&#39;m passionate about coding`}, creativity, and artificial intelligence. I love building modern, interactive web experiences that blend technology and imagination.
                 </p>
                 
                 <div 
@@ -72,7 +63,7 @@ export default function About() {
                   data-aos="fade-up"
                   data-aos-delay="800"
                 >
-                  "I believe in the hard work."
+                  &quot;I believe in the hard work.&quot;
                 </div>
               </div>
             </div>
@@ -99,16 +90,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      {/* CardCarousel at the bottom */}
-      {/* <div className="pb-8 px-8">
-        <CardCarousel
-          images={images}
-          autoplayDelay={2000}
-          showPagination={true}
-          showNavigation={true}
-        />
-      </div> */}
     </section>
   );
 }

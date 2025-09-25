@@ -3,9 +3,18 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight, Github, Globe } from "lucide-react";
 import { useEffect, useRef } from "react";
-import Image from 'next/image';
+import { SafeImage } from "./ui/SafeImage";
+import type { StaticImageData } from 'next/image';
 
-export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:any) {
+interface ProjectCardProps {
+    Title: string;
+    Description: string;
+    Tags: string[];
+    Image: string | StaticImageData;
+    Link: string;
+    Link2: string;
+}
+export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:ProjectCardProps) {
     const cardRef = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -156,25 +165,23 @@ export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:an
                     <motion.div
                         className="w-full h-64 md:h-full bg-gradient-to-br from-slate-900 to-blue-950 rounded-2xl md:rounded-r-3xl relative overflow-hidden"
                         whileHover={{ scale: 1.03 }}
-                        transition={{ type: "spring", stiffness: 150 }}
                         initial={{ scale: 0.95, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ 
+                            type: "spring", 
+                            stiffness: 150,
+                            duration: 0.5
+                        }}
                     >
-                        {/* Replace 'your-image.jpg' with your actual image filename */}
-                        <div className="absolute inset-0 w-full h-full">
-                            {/* <Image
-                                src={Image}
-                                alt="Project Preview"
-                                fill
-                                className="object-cover"
-                                
-                            /> */}
-                            <img src={Image} alt="ll" className="object-cover object-fill w-full h-full" />
-                            {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div> */}
-                            {/* <div className="absolute bottom-4 left-4 text-sky-200 font-medium z-10 text-sm md:text-base">
-                                Dashboard Preview
-                            </div> */}
-                        </div>
+                        <SafeImage 
+                            src={Image}
+                            alt={Title || "Project preview"}
+                            fill
+                            className="object-cover object-fill"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            priority
+                            unoptimized={typeof Image === 'string' && !Image.startsWith('/')}
+                        />
                     </motion.div>
                 </div>
 

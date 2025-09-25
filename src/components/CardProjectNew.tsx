@@ -3,8 +3,19 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight, Github, Globe } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { SafeImage } from "./ui/SafeImage";
+import type { StaticImageData } from 'next/image';
 
-export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:any) {
+interface ProjectCardProps {
+    Title: string;
+    Description: string;
+    Tags: string[];
+    Image: string | StaticImageData;
+    Link: string;
+    Link2: string;
+}
+
+export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:ProjectCardProps) {
     const cardRef = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -155,24 +166,23 @@ export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:an
                     <motion.div
                         className="w-full h-64 md:h-full bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl md:rounded-r-3xl relative overflow-hidden"
                         whileHover={{ scale: 1.03 }}
-                        transition={{ type: "spring", stiffness: 150 }}
                         initial={{ scale: 0.95, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.1, duration: 0.6 }}
+                        transition={{ 
+                            type: "spring", 
+                            stiffness: 150,
+                            delay: 0.1, 
+                            duration: 0.6 
+                        }}
                     >
-                                     {/* <Image
-                                src="/photo.png"
-                                alt="Project Preview"
+                            <SafeImage 
+                                src={Image}
+                                alt="Project preview"
                                 fill
                                 className="object-cover"
-                                priority
-                            /> */}
-                            <img src={Image} alt="ll" className="object-cover object-fill w-full h-full" />
-                        {/* PLACEHOLDER IMAGE — REPLACE WITH YOUR OWN */}
-                        {/* <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent z-10"></div> */}
-                        {/* <div className="absolute bottom-4 left-4 text-white font-medium z-10">
-                            Interactive Preview
-                        </div> */}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                unoptimized={typeof Image === 'string' && !Image.startsWith('/')}
+                            />
                         {/* FAKE SCREEN UI LINES */}
                         <div className="absolute inset-4 flex flex-col gap-2 z-10">
                             <div className="w-3/4 h-4 bg-white/30 rounded"></div>

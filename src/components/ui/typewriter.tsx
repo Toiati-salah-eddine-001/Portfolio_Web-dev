@@ -25,7 +25,7 @@ export default function TextGenerateEffect({
       });
       return controls.stop;
     }
-  }, [isInView, words]);
+  }, [isInView, words, count]); // count is managed by the animation, so we don't need it in deps
 
   return (
     <motion.span ref={ref} className={className}>
