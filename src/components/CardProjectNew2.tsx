@@ -3,8 +3,9 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight, Github, Globe } from "lucide-react";
 import { useEffect, useRef } from "react";
+import Image from 'next/image';
 
-export default function ProjectCard() {
+export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:any) {
     const cardRef = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -77,7 +78,7 @@ export default function ProjectCard() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
                         >
-                            Ocean Data Platform
+                            {Title}
                         </motion.h2>
                         <motion.p
                             className="text-white/90 text-lg mb-6 leading-relaxed"
@@ -85,7 +86,7 @@ export default function ProjectCard() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                            Real-time marine analytics with fluid UI, dynamic charts, and cloud-synced dashboards.
+                            {Description}
                         </motion.p>
 
                         {/* FLOATING TAGS — FROSTED SKY GLASS */}
@@ -95,7 +96,7 @@ export default function ProjectCard() {
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
                         >
-                            {["React", "D3.js", "Tailwind", "Firebase", "TypeScript"].map((tag, i) => (
+                            {Tags.map((tag, i) => (
                                 <motion.span
                                     key={tag}
                                     className="bg-white/10 backdrop-blur-sm text-sky-100 px-3 py-1.5 rounded-full text-sm font-medium border border-sky-400/30 hover:border-sky-300/60 transition-all duration-300"
@@ -113,7 +114,7 @@ export default function ProjectCard() {
                     {/* DUAL CTA BUTTONS — SKY GLASS STYLE */}
                     <div className="flex flex-wrap gap-4 mt-4">
                         <motion.a
-                            href="#"
+                            href={Link}
                             className="inline-flex items-center gap-2 bg-sky-500/20 hover:bg-sky-500/30 backdrop-blur-sm text-sky-100 px-6 py-3 rounded-xl font-medium border border-sky-400/40 hover:border-sky-300/60 transition-all duration-300"
                             whileHover={{ x: 5 }}
                             whileTap={{ scale: 0.95 }}
@@ -121,8 +122,8 @@ export default function ProjectCard() {
                             <Globe className="w-4 h-4" />
                             Live Demo
                         </motion.a>
-                        <motion.a
-                            href="#"
+                        <motion.a   
+                            href={Link2}
                             className="inline-flex items-center gap-2 bg-slate-900/50 hover:bg-slate-800/50 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-medium border border-blue-500/40 transition-all duration-300"
                             whileHover="hover"
                             initial="rest"
@@ -158,21 +159,21 @@ export default function ProjectCard() {
                         transition={{ type: "spring", stiffness: 150 }}
                         initial={{ scale: 0.95, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.1, duration: 0.6 }}
                     >
-                        {/* PLACEHOLDER IMAGE — REPLACE WITH YOUR OWN */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent z-10"></div>
-                        <div className="absolute bottom-4 left-4 text-sky-200 font-medium z-10 text-sm md:text-base">
-                            Dashboard Preview
-                        </div>
-                        {/* FAKE SCREEN UI LINES — SKY BLUE TINT */}
-                        <div className="absolute inset-4 flex flex-col gap-2 z-10">
-                            <div className="w-3/4 h-4 bg-sky-400/30 rounded"></div>
-                            <div className="w-1/2 h-3 bg-blue-300/20 rounded"></div>
-                            <div className="flex gap-2 mt-4">
-                                <div className="w-16 h-16 bg-gradient-to-br from-sky-500/20 to-blue-500/20 rounded-lg border border-sky-400/30"></div>
-                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-sky-500/20 rounded-lg border border-blue-400/30"></div>
-                            </div>
+                        {/* Replace 'your-image.jpg' with your actual image filename */}
+                        <div className="absolute inset-0 w-full h-full">
+                            {/* <Image
+                                src={Image}
+                                alt="Project Preview"
+                                fill
+                                className="object-cover"
+                                
+                            /> */}
+                            <img src={Image} alt="ll" className="object-cover object-fill w-full h-full" />
+                            {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div> */}
+                            {/* <div className="absolute bottom-4 left-4 text-sky-200 font-medium z-10 text-sm md:text-base">
+                                Dashboard Preview
+                            </div> */}
                         </div>
                     </motion.div>
                 </div>

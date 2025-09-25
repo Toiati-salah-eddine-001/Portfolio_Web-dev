@@ -27,7 +27,9 @@ function Home() {
     { src: "/images/tail n.png", alt: "Tailwind CSS" },
     { src: "/images/ts nn.png", alt: "TypeScript" },
       { src: "/images/lara nn.png", alt: "laravel" },
-      { src: "/images/next nnn.png", alt: "next" }
+      { src: "/images/next nnn.png", alt: "next" },
+      { src: "/images/mogo n.png", alt: "mongo" },
+      { src: "/images/firbase n.png", alt: "firebase" }
   ]
   return (
 <main className="min-h-screen bg-background overflow-x-hidden">
@@ -66,9 +68,9 @@ function Home() {
           </SectionTitle>
           <div className="w-full max-w-4xl mx-auto">
             <ScrollRevealSection className="grid grid-cols-1 gap-8 sm:gap-12">
-              <CardProjectNew2 />
-              <CardProjectNew />
-              <CardProjectNew2 />
+              <CardProjectNew2 Title="Project 1" Description="Description 1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indus" Tags={["Tag 1", "Tag 2"]} Image="test.jpg" Link="https://example.com" Link2="https://example.com"/>
+              <CardProjectNew Title="Project 2" Description="Description 2" Tags={["Tag 1", "Tag 2"]} Image="/images/project2.png" Link="https://example.com" Link2="https://example.com"/>
+              <CardProjectNew2 Title="Project 3" Description="Description 3" Tags={["Tag 1", "Tag 2"]} Image="/images/project3.png" Link="https://example.com" Link2="https://example.com"/>
             </ScrollRevealSection>
           </div>
         </div>

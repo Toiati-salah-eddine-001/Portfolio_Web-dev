@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight, Github, Globe } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-export default function ProjectCard() {
+export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:any) {
     const cardRef = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -77,7 +77,7 @@ export default function ProjectCard() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
                         >
-                            Nebula Admin Dashboard
+                            {Title}
                         </motion.h2>
                         <motion.p
                             className="text-white/90 text-lg mb-6 leading-relaxed"
@@ -85,7 +85,7 @@ export default function ProjectCard() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                            Real-time analytics dashboard with AI insights, dark mode, and modular widget system.
+                            {Description}
                         </motion.p>
 
                         {/* FLOATING TAGS (REPLACED BULLET LIST) */}
@@ -113,7 +113,7 @@ export default function ProjectCard() {
                     {/* DUAL CTA BUTTONS */}
                     <div className="flex flex-wrap gap-4 mt-4">
                         <motion.a
-                            href="#"
+                            href={Link}
                             className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-medium border border-white/30 transition-all duration-300"
                             whileHover={{ x: 5 }}
                             whileTap={{ scale: 0.95 }}
@@ -122,7 +122,7 @@ export default function ProjectCard() {
                             Live Demo
                         </motion.a>
                         <motion.a
-                            href="#"
+                            href={Link2}
                             className="inline-flex items-center gap-2 bg-gray-800/60 hover:bg-gray-700/60 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-medium border border-gray-600/50 transition-all duration-300"
                             whileHover="hover"
                             initial="rest"
@@ -160,6 +160,14 @@ export default function ProjectCard() {
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.1, duration: 0.6 }}
                     >
+                                     {/* <Image
+                                src="/photo.png"
+                                alt="Project Preview"
+                                fill
+                                className="object-cover"
+                                priority
+                            /> */}
+                            <img src={Image} alt="ll" />
                         {/* PLACEHOLDER IMAGE — REPLACE WITH YOUR OWN */}
                         <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent z-10"></div>
                         <div className="absolute bottom-4 left-4 text-white font-medium z-10">
