@@ -71,11 +71,11 @@ export default function ContactSection() {
 
                     {/* Instagram - Half Width, Middle Right */}
                     <PortalLink
-                        href="https://instagram.com/"
+                        href="mailto:salahtoiati@gmail.com"
                         bgColor="#f04e39"
                         gradient="from-pink-600 via-red-500 to-yellow-400"
-                        icon="/Icons9/icons8-instagram-50.png"
-                        label="Instagram"
+                        icon="/Icons9/gmail.png"
+                        label="Gmail"
                         top="33.33%"
                         left="50%"
                         width="50%"
