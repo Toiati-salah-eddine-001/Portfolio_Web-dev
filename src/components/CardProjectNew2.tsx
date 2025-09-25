@@ -51,7 +51,7 @@ export default function ProjectCard({Title,Description,Tags,Image,Link,Link2}:an
         >
             <motion.div
                 ref={cardRef}
-                style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                // style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                 whileHover={{ scale: 1.03, y: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch p-1 overflow-hidden relative group"

@@ -73,13 +73,11 @@ const Hero = () => {
                 </WrapButton>
 
                 {/* Enhanced HIRE ME badge with animations */}
-                <span className="absolute left-1/2 -translate-x-1/2 bottom-[-3rem] text-xs font-bold text-primary-foreground bg-primary px-4 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 whitespace-nowrap shadow-lg shadow-primary/20 dark:shadow-accent/20 transform group-hover:-translate-y-1 group-hover:scale-105 overflow-hidden w-[200px] text-center">
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                  <span className="relative flex items-center z-10 justify-center">
+                <span className="absolute left-1/2 -translate-x-1/2 bottom-[-3rem] text-xs font-bold text-primary-foreground bg-gray-100 px-4 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 whitespace-nowrap shadow-lg shadow-primary/20 dark:shadow-accent/20 transform group-hover:-translate-y-1 group-hover:scale-105 overflow-hidden w-[200px] text-center">
+                  <span className="relative flex items-center  justify-center">
                     <span className="inline-flex items-center">
-                      <span className="animate-bounce mr-1.5">😄</span>
+                      <span className="mr-1.5">😄</span>
                       <span>HIRE ME PLEASE</span>
-                      <span className="animate-pulse ml-1.5">✨</span>
                     </span>
                   </span>
                 </span>
@@ -87,9 +85,11 @@ const Hero = () => {
               
               <WrapButton 
                 className="px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg font-medium bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-secondary dark:hover:bg-secondary/80 dark:text-white transition-colors duration-300" 
-                href="#projects"
+                href="https://github.com/Toiati-salah-eddine-001"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                View My Work
+                My GitHub
             </WrapButton>
           </div>
         </div>

@@ -88,7 +88,7 @@ export default function About() {
               <div className="aspect-[3/4] w-full h-auto overflow-hidden rounded-xl shadow-2xl">
                 <Image
                   className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
-                  src="/photo.jpg"
+                  src="/images/myimage.jpeg"
                   alt="Salah Eddine Toiati - Web Developer"
                   width={600}
                   height={800}
